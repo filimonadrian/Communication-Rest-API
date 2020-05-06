@@ -1,0 +1,17 @@
+
+====REGISTER===
+POST /api/v1/tema/auth/register HTTP/1.1
+Host: ec2-3-8-116-10.eu-west-2.compute.amazonaws.com
+Content-Type: application/json
+Content-Length: 47
+
+{"username":"raduciobanu1","password":parola"}
+
+=====LOGIN====
+POST /api/v1/tema/auth/login HTTP/1.1
+Host: ec2-3-8-116-10.eu-west-2.compute.amazonaws.com
+Content-Type: application/json
+Content-Length: 47
+
+{"username":"raduciobanu1","password":parola"}
+
