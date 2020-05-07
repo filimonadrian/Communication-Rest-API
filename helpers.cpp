@@ -46,7 +46,7 @@ void close_connection(int sockfd) {
     close(sockfd);
 }
 
-void send_to_server(int sockfd, char *message) {
+void send_to_server(int sockfd, const char *message) {
     int bytes, sent = 0;
     int total = strlen(message);
 
@@ -80,8 +80,9 @@ char *receive_from_server(int sockfd) {
         if (bytes == 0) {
             break;
         }
-
+        
         buffer_add(&buffer, response, (size_t)bytes);
+
 
         header_end = buffer_find(&buffer, HEADER_TERMINATOR, HEADER_TERMINATOR_SIZE);
 

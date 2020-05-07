@@ -15,3 +15,43 @@ Content-Length: 47
 
 {"username":"raduciobanu1","password":parola"}
 
+adrian@adrian-thor:~/Documents/pc/Communication-Rest-API$ ./client 
+POST /api/v1/tema/auth/register HTTP/1.1
+Host: ec2-3-8-116-10.eu-west-2.compute.amazonaws.com
+Content-Type: application/json
+Content-Length: 51
+
+{"password":"studentiada","username":"studentiada"}
+
+HTTP/1.1 201 Created
+Access-Control-Allow-Origin: *
+X-DNS-Prefetch-Control: off
+X-Frame-Options: SAMEORIGIN
+Strict-Transport-Security: max-age=15552000; includeSubDomains
+X-Download-Options: noopen
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Date: Wed, 06 May 2020 08:57:20 GMT
+Connection: keep-alive
+Content-Length: 0
+
+adrian@adrian-thor:~/Documents/pc/Communication-Rest-API$ ./client 
+POST /api/v1/tema/auth/login HTTP/1.1
+Host: ec2-3-8-116-10.eu-west-2.compute.amazonaws.com
+Content-Type: application/json
+Content-Length: 51
+
+{"password":"studentiada","username":"studentiada"}
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+X-DNS-Prefetch-Control: off
+X-Frame-Options: SAMEORIGIN
+Strict-Transport-Security: max-age=15552000; includeSubDomains
+X-Download-Options: noopen
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Set-Cookie: connect.sid=s%3AJIt1_ec_kuoXLf2Z2EXMQRXb9l0opSJc.njVBOYTbx5%2F15Ew5c2lCjJ03dPGwNQs6OlbzvTjSQro; Path=/; HttpOnly
+Date: Wed, 06 May 2020 11:22:10 GMT
+Connection: keep-alive
+Content-Length: 0

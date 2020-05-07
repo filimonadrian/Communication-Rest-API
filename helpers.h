@@ -17,7 +17,7 @@ int open_connection(char *host_ip, int portno, int ip_type, int socket_type, int
 void close_connection(int sockfd);
 
 // send a message to a server
-void send_to_server(int sockfd, char *message);
+void send_to_server(int sockfd, const char *message);
 
 // receives and returns the message from a server
 char *receive_from_server(int sockfd);

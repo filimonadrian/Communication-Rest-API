@@ -1,5 +1,5 @@
-CC=gcc
-CFLAGS=-I.
+CC=g++
+CFLAGS=-I -std=c++11.
 
 client: client.cpp requests.cpp helpers.cpp buffer.cpp
 	$(CC) -o client client.cpp requests.cpp helpers.cpp buffer.cpp -Wall
