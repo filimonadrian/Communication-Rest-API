@@ -1,7 +1,7 @@
 #ifndef _HELPERS_
 #define _HELPERS_
 
-#define BUFLEN 4096
+#define BUFLEN 5096
 #define LINELEN 1000
 
 // shows the current error

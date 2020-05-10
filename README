@@ -1,0 +1,60 @@
+Tema 3
+Filimon Costel-Adrian
+324CC
+
+
+Fisiere: 
+
+Am plecat de la implementarea din laboratorul 10, am testat intai cu ajutorul 
+telnet comenzile pe care ar trebui sa le dau, urmand sa construiesc sirurile.
+
+Functiile din fisierul requests.cpp sunt cele din laboratorul 10, cu cateva
+modificari 
+    -> primeste std::string, si nu char*
+    -> am adaugat si jwt_tokenul
+
+Fisierul client.h: contine toate path-urile de care am nevoie pentru a apela
+o anumita functie
+
+Fisierul client.cpp:
+    -> fiecare comanda are o functie dedicata
+
+
+
+JSON:
+Folosesc json doar pentru campurile de date pe care le trimit, nu si pentru ce
+primesc( doar pentru credentiale si pentru add_book).
+
+Implementare:
+
+Functia extraction primeste raspunsul pe care il returneaza serverul si cauta
+in functie de un criteriu: define-urile sunt in client.h
+ex: caut o eroare, un json pe care il returneaza etc.
+
+
+Toate functiile dedicate sunt construite pe acealasi pattern: 
+    -> construiesc mesajul, il trimit 
+    -> primesc raspunsul de la server: daca acesta are un cod cu 2xx(succes), 
+    afisez ok, altfel afisez eroarea
+
+read_book_fields: citeste campurile pentru adaugarea de carte
+    -> verifica daca numarul introdus este numar
+
+hostname_to_ip = am incercat sa hardcodez cat mai putin, asa ca ip-ul este scos
+    pe baza hostname ului
+
+Flow:
+Pentru orice comanda invalida, se afiseaza optiunile;
+Pot fi accesate cu numele sau cifra corespunzatoare
+
+Pentru fiecare comanda se deschide si se inchide conexiunea;
+
+Cand un client se logheaza, se face update la credentiale si la cookie si 
+setez flag ul pentru online(daca se va mai incerca logarea, se va afisa un
+mesaj de eroare); Daca se incearca acceasarea cartilor fara a avea acces, se va
+afisa un mesaj de eroare; cand se face enter_library se actualizeaza si campul 
+de jwt token si primeste acces(acces = 1); pentru celelalte comenzi ce tin de 
+carti se afieaza raspunsul dorit / se se adauga cartea. Pentru detaliile unei 
+carti sau pentru a sterge o carte NU SE VERIFICA daca id-ul este un numar
+(si produce o eroare care inchide serverul - codul pe care l-am incercat este 
+comentat). 

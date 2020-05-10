@@ -1,0 +1,64 @@
+REGISTER
+--------
+POST /api/v1/tema/auth/register HTTP/1.1
+Host: ec2-3-8-116-10.eu-west-2.compute.amazonaws.com
+Content-Type: application/json
+Content-Length: 47
+
+{"username":"raduciobanu1","password":"parola"}
+
+
+LOGIN
+-----
+POST /api/v1/tema/auth/login HTTP/1.1
+Host: ec2-3-8-116-10.eu-west-2.compute.amazonaws.com
+Content-Type: application/json
+Content-Length: 47
+
+{"username":"raduciobanu1","password":"parola"}
+
+connect.sid=s%3AKOpOohunJZ0hfHL-jHnd0t0nQM8WQzBl.nfNfzUWBO5BA3ada97v2UcRBTBPvUGiG7IaFJkESIj4
+
+ACCES
+-----
+GET /api/v1/tema/library/access HTTP/1.1
+Host: ec2-3-8-116-10.eu-west-2.compute.amazonaws.com
+Cookie: connect.sid=s%3AKOpOohunJZ0hfHL-jHnd0t0nQM8WQzBl.nfNfzUWBO5BA3ada97v2UcRBTBPvUGiG7IaFJkESIj4
+\r\n
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxODk5MDMsImlhdCI6MTU4ODY4NjIyOSwiZXhwIjoxNTg4Njg5ODI5LCJhdWQiOiJzdHVkZW50aSIsImlzcyI6IlByb3RvY29hbGUgZGUgQ29tdW5pY2F0aWUiLCJzdWIiOiJUb2tlbiBwZW50cnUgdGVtYSBkZSBwcm90b2NvYWxlIn0.FRk_q6SA_cf9S5vNaFgnm_4SV2B2rNP2t3NRD7rYRbE
+
+SUMAR
+-----
+GET /api/v1/tema/library/books HTTP/1.1
+Host: ec2-3-8-116-10.eu-west-2.compute.amazonaws.com
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxODk5MDMsImlhdCI6MTU4ODY4NjIyOSwiZXhwIjoxNTg4Njg5ODI5LCJhdWQiOiJzdHVkZW50aSIsImlzcyI6IlByb3RvY29hbGUgZGUgQ29tdW5pY2F0aWUiLCJzdWIiOiJUb2tlbiBwZW50cnUgdGVtYSBkZSBwcm90b2NvYWxlIn0.FRk_q6SA_cf9S5vNaFgnm_4SV2B2rNP2t3NRD7rYRbE
+\r\n
+
+ADD
+---
+POST /api/v1/tema/library/books HTTP/1.1
+Host: ec2-3-8-116-10.eu-west-2.compute.amazonaws.com
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxODk5MDMsImlhdCI6MTU4ODY4NjIyOSwiZXhwIjoxNTg4Njg5ODI5LCJhdWQiOiJzdHVkZW50aSIsImlzcyI6IlByb3RvY29hbGUgZGUgQ29tdW5pY2F0aWUiLCJzdWIiOiJUb2tlbiBwZW50cnUgdGVtYSBkZSBwcm90b2NvYWxlIn0.FRk_q6SA_cf9S5vNaFgnm_4SV2B2rNP2t3NRD7rYRbE
+Content-Type: application/json
+Content-Length: 92
+
+{"title":"Dune","author":"Frank Herbert","genre":"SF","page_count":500,"publisher":"Nemira"}
+
+DETALII
+-------
+GET /api/v1/tema/library/books/1000 HTTP/1.1
+Host: ec2-3-8-116-10.eu-west-2.compute.amazonaws.com
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxODk5MDMsImlhdCI6MTU4ODY4NjIyOSwiZXhwIjoxNTg4Njg5ODI5LCJhdWQiOiJzdHVkZW50aSIsImlzcyI6IlByb3RvY29hbGUgZGUgQ29tdW5pY2F0aWUiLCJzdWIiOiJUb2tlbiBwZW50cnUgdGVtYSBkZSBwcm90b2NvYWxlIn0.FRk_q6SA_cf9S5vNaFgnm_4SV2B2rNP2t3NRD7rYRbE
+
+STERGERE
+--------
+DELETE /api/v1/tema/library/books/995 HTTP/1.1
+Host: ec2-3-8-116-10.eu-west-2.compute.amazonaws.com
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxODk5MDMsImlhdCI6MTU4ODY4NjIyOSwiZXhwIjoxNTg4Njg5ODI5LCJhdWQiOiJzdHVkZW50aSIsImlzcyI6IlByb3RvY29hbGUgZGUgQ29tdW5pY2F0aWUiLCJzdWIiOiJUb2tlbiBwZW50cnUgdGVtYSBkZSBwcm90b2NvYWxlIn0.FRk_q6SA_cf9S5vNaFgnm_4SV2B2rNP2t3NRD7rYRbE
+
+LOGOUT
+------
+GET /api/v1/tema/auth/logout HTTP/1.1
+Host: ec2-3-8-116-10.eu-west-2.compute.amazonaws.com
+Cookie: connect.sid=s%3AKOpOohunJZ0hfHL-jHnd0t0nQM8WQzBl.nfNfzUWBO5BA3ada97v2UcRBTBPvUGiG7IaFJkESIj4

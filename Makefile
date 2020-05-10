@@ -1,8 +1,9 @@
 CC=g++
 CFLAGS=-I -std=c++11.
+SOURCES=client.cpp requests.cpp helpers.cpp buffer.cpp
 
-client: client.cpp requests.cpp helpers.cpp buffer.cpp
-	$(CC) -o client client.cpp requests.cpp helpers.cpp buffer.cpp -Wall
+client: $(SOURCES)
+	$(CC) -o client $(SOURCES) -Wall
 
 run: client
 	./client
